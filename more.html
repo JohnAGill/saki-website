@@ -170,16 +170,27 @@
       });
 
       const starsEl = document.querySelector(".stars");
-      const stars = 800;
+      const stars = 1200;
       const r = 800;
 
       let html = "";
 
       for (let i = 0; i < stars; i++) {
-        const scale = 0.2 + Math.random() * 1;
+        const scale = 0.2 + Math.random();
         const curR = r + Math.random() * 300;
 
-        const css = `transform-origin: 0px 0px ${curR}px; transform: translate3d(0px, 0px, -${curR}px) rotateY(${Math.random() * 360}deg) rotateX(${Math.random() * -50}deg) scale(${scale});`;
+        // Spread stars throughout the full upper hemisphere.
+        const rotateX = Math.random() * -90;
+        const rotateY = Math.random() * 360;
+
+        const css = `
+    transform-origin: 0 0 ${curR}px;
+    transform:
+      translate3d(0, 0, -${curR}px)
+      rotateY(${rotateY}deg)
+      rotateX(${rotateX}deg)
+      scale(${scale});
+  `;
 
         html += `<div class="star" style="${css}"></div>`;
       }
