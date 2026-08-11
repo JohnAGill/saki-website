@@ -9045,17 +9045,26 @@ body.editing .page-editor-block[data-block-type="row"]:empty {
   padding-top: 14px;
   padding-bottom: 14px;
   font-weight: 600;
-  color: #d8b4fe;
+  color: #e7c6ff;
 }
 .social-link-buttons a:hover {
   color: white;
-  background-color: #d8b4fe;
+  background-color: #e7c6ff;
 }
 .shake {
   animation: shake-animation 4.72s ease infinite;
   transform-origin: 50% 50%;
 }
-
+.header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.purple-heart {
+  color: #d8b4fe;
+  font-family: Arial, sans-serif;
+}
 @keyframes shake-animation {
   0% {
     transform: translate(0, 0);
@@ -9139,12 +9148,26 @@ body.editing .page-editor-block[data-block-type="row"]:empty {
   opacity: 0.15;
 }
 .bio {
-  padding: 24px;
+  padding: 12px;
   margin: 0px 32px 32px 32px;
   border: solid white 1px;
 }
 .bio-text {
   margin: 0;
-  font-size: 24px;
-  color: #d8b4fe;
+  font-size: 12px;
+  color: #e7c6ff;
+}
+.bio-text:hover {
+  color: #e7c6ff;
+}
+.title {
+  margin: 0px;
+  font-size: 100px;
+  color: white;
+}
+@media (max-width: 600px) {
+  .title {
+    font-size: 65px;
+    line-height: 1.4;
+  }
 }
